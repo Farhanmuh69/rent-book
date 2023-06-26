@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class profile extends Controller
+{
+    public function profile(Request $request)
+    {
+        // return view('profile');
+        dd(Auth::user());
+        
+    }
+}
