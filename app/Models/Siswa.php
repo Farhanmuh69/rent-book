@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Siswa extends Model
 {
-    // protected $table = 'users';
-    protected $fillable = [
-        'name'
-    ];
+    protected $table = 'siswa';
     use HasFactory;
 }
