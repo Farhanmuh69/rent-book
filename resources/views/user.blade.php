@@ -33,11 +33,13 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->username }}</td>
                         <td>
-                            @if ($item->phone)
+                            <a href=" https://wa.me/{{ $item->phone }}" target="_blank">
+                                @if ($item->phone)
                                 {{ $item->phone }}
                             @else 
                                 -
                             @endif
+                            </a>
                         </td>
                         <td>
                             <a href="/user-detail/{{$item->slug}}">detail</a>
