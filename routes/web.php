@@ -41,7 +41,7 @@ Route::post('register',[AuthController::class,'registerProcess']);
 
 Route::middleware('auth')->group(function () {
         Route::get('logout',[AuthController::class,'logout']);
-        Route::get('dashboard',[dashboard::class,'dashboard'])->middleware(['auth']);
+        Route::get('dashboard',[dashboard::class,'dashboard'])->middleware(['only_admin']);
         Route::get('profile',[profile::class,'profile'])->middleware('auth');
 
 
