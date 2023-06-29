@@ -45,7 +45,7 @@
                 @csrf
                 <div>
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" >
+                    <input type="text" name="username" id="username" class="form-control" required>
                 </div>
                 <div>
                     <label for="password">Password</label>
@@ -53,11 +53,11 @@
                 </div>
                 <div>
                     <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" class="form-control" >
+                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Ex. 6281222137590" required>
                 </div>
                 <div>
                     <label for="addres">Addres</label>
-                    <textarea name="addres" id="addres" class="form-control"></textarea>
+                    <textarea name="addres" id="addres" class="form-control" required></textarea>
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary">Register</button>

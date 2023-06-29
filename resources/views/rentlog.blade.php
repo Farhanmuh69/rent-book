@@ -5,6 +5,11 @@
 @section('page-name','dashboard')
 
 @section('content')
-    <h1>Ini halaman rent log</h1>
+
+<div class="mt-5">
+    <h1>Rent Log</h1>
+    <x-rent-logs-table :rentlog='$rent_logs'/>
+</div>
+
 @endsection
 
