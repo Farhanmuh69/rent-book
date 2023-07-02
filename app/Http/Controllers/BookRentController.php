@@ -102,9 +102,10 @@ class BookRentController extends Controller
         $countData = $rent->count();
 
         if ($countData == 1) {
+            $rentData->actual_return_date = Carbon::now()->toDateString();
+            $rentData->save();
             try{
                 DB::beginTransaction();
-                $rentData->actual_return_date = Carbon::now()->toDateString();
                 RentLogs::where($request->all());
 
                 $book = Book::findOrfail($request->book_id);

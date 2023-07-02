@@ -14,10 +14,12 @@ class OnlyAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle($request, Closure $next)
     {
-        if (Auth::user()->role_id != 1) {
-            return redirect('/books');
+        if (Auth::user() &&  Auth::user()->role_id == 1) {
+             return $next($request);
         }
+
+        return redirect('profile');
     }
 }

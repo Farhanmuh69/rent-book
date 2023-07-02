@@ -18,7 +18,7 @@
             <div class="input-group mb-3">
                 <input type="text" name="title" class="form-control" placeholder="Search Book Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="text">search</button>
+                    <button class="btn btn-primary" type="text">Search</button>
                 </div>
               </div>
         </div>
