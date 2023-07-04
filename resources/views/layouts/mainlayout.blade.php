@@ -11,9 +11,12 @@
 <body>
 
     <div class="main d-flex flex-column justify-content-between">
-        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+        <nav class="navbar navbar-light navbar-expand-lg " style="background-color: #F3DECD">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Rental Buku</a>
+                <div draggable="false">
+                    {{-- <img draggable="false" src="../img/logo.svg" > --}}
+                    <img draggable="false" src="{{ asset('img/logo.svg') }}" >
+                  </div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -33,8 +36,8 @@
                             <a href="/rent-logs" @if(request()->route()->uri ==  'rent-logs') class="active" @endif>Rent Log</a>
                             <a href="/logout">LogOut</a>
                         @else
-                            <a href="/profile" @if(request()->route()->uri ==  'profile') class="active" @endif>Profile</a>
-                            <a href="/">Book List</a>
+                            <a href="/profile" @if(request()->route()->uri ==  'profile') class="active" @endif>History</a>
+                            <a href="/bookList">Book List</a>
                             <a href="/logout">LogOut</a>
                         @endif                    
                     @else
