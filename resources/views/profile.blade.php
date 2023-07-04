@@ -1,7 +1,6 @@
 @extends('layouts.mainlayout')
 
-@section('title', 'Profile')
-
+@section('title', 'login')
 @section('content')
     <div>
         <h2>History</h2>
