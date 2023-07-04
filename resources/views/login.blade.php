@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,4 +59,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
-</html>
+</html> --}}
+@extends('layouts.Pageuser')
+
+@section('title', 'login')
+@section('page-user')
+<style>
+    .main{
+        height: 100vh;
+        box-sizing: border-box;
+        
+    }
+    .login-box{
+        width: 500px;
+        border: solid 1px;
+        padding: 20px;
+    }
+    form div{
+        margin-bottom: 20px
+    }
+
+</style>
+<body>
+    <div class="main d-flex justify-content-center d-flex align-items-center">
+        @if (Session('status'))
+            <div class="alert alert-danger">
+                {{ Session('message') }}
+            </div>
+        @endif
+        <div class="login-box">
+            <form action="" method="POST">
+                @csrf
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" required >
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required >
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+                <div>
+                    <a href="register" class="text-center">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+@endsection

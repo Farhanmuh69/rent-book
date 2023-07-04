@@ -25,9 +25,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->middleware('auth');
+
 
 Route::get('/',[PublicController::class,'index']);
 
@@ -42,7 +40,19 @@ Route::post('register',[AuthController::class,'registerProcess']);
 Route::middleware('auth')->group(function () {
         Route::get('logout',[AuthController::class,'logout']);
         Route::get('dashboard',[dashboard::class,'dashboard'])->middleware(['only_admin']);
-        Route::get('profile',[profile::class,'profile'])->middleware('auth');
+        Route::get('profile',[profile::class,'profile']);
+        Route::get('bookList',[profile::class,'bookList']);
+
+
+        Route::get('categories',[CategoryController::class,'categories']);
+        Route::get('category-add',[CategoryController::class,'add']);
+        Route::post('category-add',[CategoryController::class,'store']);
+        Route::get('category-edit/{post:slug}',[CategoryController::class,'edit']);
+        Route::put('category-edit/{post:slug}',[CategoryController::class,'update']);
+        Route::get('category-delete/{post:slug}',[CategoryController::class,'delete']);
+        Route::get('category-destroy/{post:slug}',[CategoryController::class,'destroy']);
+        Route::get('category-deleted',[CategoryController::class,'deletedCategory']);
+        Route::get('category-restore/{slug}',[CategoryController::class,'restore']);
 
 
         Route::get('categories',[CategoryController::class,'categories']);

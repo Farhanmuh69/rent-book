@@ -1,0 +1,36 @@
+body{
+    background-color: #F3DECD;
+}
+.btn-color{
+    background-color: #EF8732 !important;
+    color: antiquewhite!important;
+    border-radius: 10px!important;
+}
+
+.navbar{
+    background-color: #F3DECD;
+    position: fixed;
+    
+}
+.nav-color{
+    color: black!important;
+}
+.container-book{
+    width: 780px;
+    height: 845px;
+    flex-shrink: 0;
+}
+.content{
+    background-color:#F3DECD; 
+    display: flex;
+    height: 100vh;
+}
+.container-trending{
+    display: 50vh;
+}
+.container-team{  
+    height: 50vh; 
+}
+.container{
+    background-color: #F3DECD;
+}

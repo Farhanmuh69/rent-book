@@ -8,23 +8,9 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
-    public function index(Request $request)
+  
+    public function index()
     {
-        $categories = Category::all();
-
-        if ($request->category) {
-            // $books = Book::where('title','like','%'.$request->title.'%')->get();
-            $books = Book::whereHas('categories', function($q) use($request){
-                $q->where('categories.id', $request->category);
-            })->get();
-        }
-        elseif($request->title){
-            $books = Book::where('title','like','%'.$request->title.'%')->get();
-        }
-        else{
-            $books = Book::all();
-        }
-
-        return view('book-list',['books'=>$books, 'categories'=>$categories]);
+        return view('home');
     }
 }
