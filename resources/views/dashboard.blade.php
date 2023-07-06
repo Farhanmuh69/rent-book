@@ -44,24 +44,6 @@
     </div>
 
     <div class="mt-5">
-        <h2>#Rent Log</h2>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>User</th>
-                    <th>Book Title</th>
-                    <th>Rent Date</th>
-                    <th>Return Date</th>
-                    <th>Actual Return Date</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <td colspan="7" style="text-align: center">NO Data</td>
-            </tbody>
-        </table>
     </div>
 @endsection
 

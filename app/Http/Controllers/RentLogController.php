@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class RentLogController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         // $today = Carbon::now()->toDateString();
         $rentlogs = RentLogs::with(['user','book'])->get();

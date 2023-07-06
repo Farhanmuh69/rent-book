@@ -67,4 +67,5 @@ class UserController extends Controller
         $user->restore();
         return redirect('users')->with('status','User restore Succesfuly');
     } 
+   
 }

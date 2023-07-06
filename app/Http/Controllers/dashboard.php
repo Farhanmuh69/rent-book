@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Category;
 use App\Models\User;
+use App\Models\Category;
+use App\Models\RentLogs;
 use Illuminate\Http\Request;
 
 class dashboard extends Controller
@@ -14,7 +15,6 @@ class dashboard extends Controller
         $bookCount = Book::count();
         $categoryCount = Category::count();
         $userCount = User::count();
-        return view('dashboard', ['book_count' => $bookCount,'category_count' => $categoryCount, 'user_count' => $userCount]);
-        
+        return view('dashboard', ['book_count' => $bookCount,'category_count' => $categoryCount, 'user_count' => $userCount]); 
     }
 }
