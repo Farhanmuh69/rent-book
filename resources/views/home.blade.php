@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('css/styless.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="icon" href="{{ asset('img/logos.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>BookBase | Home</title>
 </head>
@@ -46,153 +47,182 @@
       </header>
     </div>
     <div class="content">
-      <div class="container col-xxl-8 px-20 py-0">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class=" ">
+        <div class="row flex-lg-row-reverse align-items-center g-2 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
-            <img draggable="false" src="./img/imageBook.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                <img  draggable="false" src="./img/imageBook.svg" class="bookssd-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
-          <div class="text-content col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Your place to rent books</h1>
-            <p class="lead">Welcome to bookbase, rent the book you want to read and get the best price</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <a href="/login"><button type="button" class="btn-color btn btn-primary btn-lg px-4 me-md-2">Rent Now!</button></a>
-            </div>
+          <div class="text-start col-lg-6 p-3 p-lg-5 pt-lg-3" style="margin-top:0px">
+                <h1 class="display-2 fw-bold lh-1 mb-3">Your place to rent books</h1>
+                <p class="lead">Welcome to bookbase, rent the book you want to read and get the best price</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <a href="/login"><button type="button" style="box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.14); border:none" class="btn-color btn btn-primary btn-lg px-4 me-md-2">Rent Now!</button></a>
+                </div>
           </div>
         </div>
       </div>
     </div>
-</div>
+
+
+
 <div class="container-trending" id="product">
   <div class="title text-center">
     <h1><b>Trending Books</b></h1>
-    <img src= "{{asset('img/line 2.png')}}". alt="">
+    <img draggable="false" src= "{{asset('img/line 2.png')}}". alt="">
   </div>
     <div class="slider">
               <div class="owl-carousel">
+              {{-- @foreach ($books as $item) --}}
+              @foreach ($books as $item)
+               @if($loop->index < 5)
                   <div class="slider-card">
                       <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img class="h-100" src="img/sikancil.jpg" alt="" >
+                          <img class="h-100" draggable="false" src="{{ $item->cover != null ? asset('storage/cover/'.$item->cover) : asset('storage/image/cover-not-found.jpg') }}" class="card-img-top" alt="..." >
                       </div>
-                      <h5 class="mb-0 text-center"><b>Sikancil</b></h5>
+                      <h5 class="mb-0 text-center"><b>{{ $item->title }}</b></h5>
                       <p class="text-center p-4"></p>
                   </div>
-
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img class="h-100" src="/img/cover1.jpg" alt="">
-                      </div>
-                      <h5 class="mb-0 text-center"><b>Matahari</b></h5>
-                      <p class="text-center p-4"></p>
-                  </div>
-
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img class="h-100" src="img/cover2.jpg" alt="">
-                      </div>
-                      <h5 class="mb-0 text-center">Ruang Sunyi<b></b></h5>
-                      <p class="text-center p-4"></p>
-                  </div>
-
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img class="h-100" src="img/cover3.jpg" alt="">
-                      </div>
-                      <h5 class="mb-0 text-center"><b>Menanti Restu Langit</b></h5>
-                      <p class="text-center p-4"></p>
-                  </div>
-
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img class="h-100" src="img/cover4.jpg" alt="">
-                      </div>
-                      <h5 class="mb-0 text-center"><b>Peony's world</b></h5>
-                      <p class="text-center p-4"></p>
-                  </div>
+                  @endif
+              @endforeach
         </div>
+        <br>
+        <a style="text-decoration: none" href="/login"><h5 class="text-center" style="color:darkgrey;">more books -></h5></a>
  </div>
 
-<div class="categories">
+<div class="categories" style="margin-right: 20px">
   <div class="title-categories text-center">
     <h1><b>Books Categories</b></h1>
-    <img src="./img/Line 2.png" alt="">
+    <img draggable="false" src="{{asset('img/line 2.png')}}" alt="">
   </div>
-  <div class="slider">
-    <div class="owl-carousel">
-        <div class="slider-category">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img draggable="false" class="category-item" src="./img/Group 3.svg" alt="">
-            </div>
-        </div>
+        <div class="slider">
+          <div class="owl-carousel">
+              <div class="slider-category">
+                  <div class="d-flex justify-content-center align-items-center mb-4">
+                    <img draggable="false" class="category-item" src="./img/Group 3.svg" alt="">
+                  </div>
+              </div>
 
-        <div class="slider-category">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img draggable="false" class="category-item" src="./img/Group 5.svg" alt="">
-            </div>
-        </div>
+              <div class="slider-category">
+                  <div class="d-flex justify-content-center align-items-center mb-4">
+                    <img draggable="false" class="category-item" src="./img/Group 5.svg" alt="">
+                  </div>
+              </div>
 
-        <div class="slider-category">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img draggable="false" class="category-item" src="./img/Group 3.svg" alt="">
-            </div>
-        </div>
+              <div class="slider-category">
+                  <div class="d-flex justify-content-center align-items-center mb-4">
+                    <img draggable="false" class="category-item" src="./img/Group 3.svg" alt="">
+                  </div>
+              </div>
 
-        <div class="slider-category">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img draggable="false" class="category-item" src="./img/Group 6.svg" alt="">
-            </div>
-        </div>
+              <div class="slider-category">
+                  <div class="d-flex justify-content-center align-items-center mb-4">
+                    <img draggable="false" class="category-item" src="./img/Group 6.svg" alt="">
+                  </div>
+              </div>
 
-        <div class="slider-category">
-            <div class="d-flex justify-content-center align-items-center mb-4">
-              <img draggable="false" class="category-item" src="./img/Group 1.svg" alt="">
-            </div>
-        </div>
+              <div class="slider-category">
+                  <div class="d-flex justify-content-center align-items-center mb-4">
+                    <img draggable="false" class="category-item" src="./img/Group 1.svg" alt="">
+                  </div>
+              </div>
+      </div>
 </div>
 
-</div>
-
-
-<div class="container-team mt-5" id="about">
-  <div class="categories-title text-center">
-    <h1><b>Our Team</b></h1>
-    <img src= "{{asset('img/line 2.png')}}". alt="">
-  </div>
-  <div class="row">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div class="my-5" id="about">
+      <div class="container-team">
+            <div class="row justify-content-center mb-4">
+              <div class="col-md-7 text-center">
+                  <h1><b>Our Team</b></h1>
+                  <img draggable="false" src="{{asset('img/line 2.png')}}" alt="">
+              </div>
+            </div>
+            <div class="row" style="margin-left: 50px">
+                  <div class="col-lg-4 mb-3">
+                    <div class="row">
+                      <div class="col-md-10 text-center">
+                        <img src="{{asset('img/foto1.jpg')}}" alt="" class="img-circle rounded-circle h-100" style="width: 200px" />
+                      </div>
+                      <div class="col-md-10 text-center">
+                        <div class="pt-1">
+                          <h5 class="mt-4 font-weight-medium mb-0">Muhammad Farhan</h5>
+                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-3">
+                    <div class="row">
+                      <div class="col-md-10 text-center">
+                        <img src="{{asset('img/foto2.jpg')}}" alt="" class="img-circle rounded-circle h-100" style="width: 200px" />
+                      </div>
+                      <div class="col-md-10 text-center">
+                        <div class="pt-1">
+                          <h5 class="mt-4 font-weight-medium mb-0">Fitria Amanda</h5>
+                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-3">
+                    <div class="row">
+                      <div class="col-md-10 text-center">
+                        <img src="{{asset('img/foto4.jpeg')}}" alt="" class="img-circle rounded-circle h-100" style="width: 200px" />
+                      </div>
+                      <div class="col-md-10 text-center">
+                        <div class="pt-1">
+                          <h5 class="mt-4 font-weight-medium mb-0">Daffa Rafsanjani</h5>
+                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-3">
+                    <div class="row">
+                      <div class="col-md-10 text-center">
+                        <img src="{{asset('img/foto5.jpeg')}}" alt="" class="img-circle rounded-circle h-100" style="width: 200px" />
+                      </div>
+                      <div class="col-md-10 text-center">
+                        <div class="pt-1">
+                          <h5 class="mt-4 font-weight-medium mb-0">Fauzan Luthfi</h5>
+                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-3">
+                    <div class="row">
+                      <div class="col-md-10 text-center">
+                        <img src="{{asset('img/foto3.jpeg')}}" alt="" class="img-circle rounded-circle h-100" style="width: 200px" />
+                      </div>
+                      <div class="col-md-10 text-center">
+                        <div class="pt-1">
+                          <h5 class="mt-4 font-weight-medium mb-0">Lina Rohmatun</h5>
+                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 mb-3">
+                    <div class="row">
+                      <div class="col-md-10 text-center">
+                        <img src="{{asset('img/foto6.1.jpeg')}}" alt="" class="img-circle rounded-circle h-100" style="width: 200px" />
+                      </div>
+                      <div class="col-md-10 text-center">
+                        <div class="pt-1">
+                          <h5 class="mt-4 font-weight-medium mb-0">Anugrah Mulki</h5>
+                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="my-5" >
+<div class="my-0 mb-0 " >
   <!-- Footer -->
   <footer
           class="text-center text-lg-start text-dark"
@@ -221,10 +251,10 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-bold mb-4 font-weight-bold">Contact Us</h6>
             <p>
-              <a href="https://wa.me/6288376493512" class="text-dark">Phone : +62 883 7649 3512</a>
+              <a href="https://wa.me/62882005613374" class="text-dark" target="_blank">Phone : +62-8820-0561-3374</a>
             </p>
             <p>
-              <a href="https://mailto:{{ 'bookbase@gmail.com' }}" class="text-dark">Email : bookbase@gmail.com</a>
+              <a href="mailto:bookbase@gmail.com" class="text-dark" target="_blank">Email : bookbase@gmail.com</a>
             </p>
           </div>
           <!-- Grid column -->

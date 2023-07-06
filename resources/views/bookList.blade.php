@@ -18,7 +18,7 @@
             <div class="input-group mb-3">
                 <input type="text" name="title" class="form-control" placeholder="Search Book Title" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="text">Search</button>
+                    <button style="background-color:#EF8732 " class="btn btn-primary" type="text">Search</button>
                 </div>
               </div>
         </div>
@@ -29,7 +29,7 @@
          @foreach ($books as $item)
          <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
              <div class="card h-100 ">
-                 <img class="h-100" draggable="false" src="{{ $item->cover != null ? asset('storage/cover/'.$item->cover) : asset('storage/image/cover-not-found.jpg') }}" class="card-img-top" alt="...">
+                 <img style="box-shadow: -8px 8px 10px 0px rgba(0, 0, 0, 0.25);" class="h-100" draggable="false" src="{{ $item->cover != null ? asset('storage/cover/'.$item->cover) : asset('storage/image/cover-not-found.jpg') }}" class="card-img-top" alt="...">
                  <div class="card-body">
                  <h5 class="card-title">{{ $item->title }}</h5>
                  <p class="card-text">{{ $item->book_code }}</p>

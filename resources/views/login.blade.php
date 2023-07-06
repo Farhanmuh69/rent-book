@@ -1,65 +1,4 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rental buku | login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-</head>
-
-<style>
-    .main{
-        height: 100vh;
-        box-sizing: border-box;
-    }
-    .login-box{
-        width: 500px;
-        border: solid 1px;
-        padding: 20px;
-    }
-    form div{
-        margin-bottom: 20px
-    }
-
-</style>
-
-
-<body>
-    <div class="main d-flex justify-content-center d-flex align-items-center">
-        @if (Session('status'))
-            <div class="alert alert-danger">
-                {{ Session('message') }}
-            </div>
-        @endif
-        <div class="login-box">
-            <form action="" method="POST">
-                @csrf
-                <div>
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" required >
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required >
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-                <div>
-                    <a href="register" class="text-center">Sign Up</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
-</html> --}}
 @extends('layouts.Pageuser')
 
 @section('title', 'login')
@@ -68,26 +7,40 @@
     .main{
         height: 100vh;
         box-sizing: border-box;
-        
+        background-image: url('{{ asset("img/bglogin.svg") }}');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .login-box{
+        
+        box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.30);
         width: 500px;
         border: solid 1px;
         padding: 20px;
+        border-radius: 20px;
+        background-color: aqua;
     }
     form div{
         margin-bottom: 20px
     }
 
+
 </style>
 <body>
-    <div class="main d-flex justify-content-center d-flex align-items-center">
+    <div class="main d-flex justify-content-center d-flex align-items-center color-dark" >
         @if (Session('status'))
-            <div class="alert alert-danger">
+            <div class="alert">
                 {{ Session('message') }}
             </div>
         @endif
-        <div class="login-box">
+        {{-- <img class="align-self-center mr-3" src="{{ asset('img/logo.svg') }}" alt=""> --}}
+        <div class="login-box" style="background-color: white">
+        <img draggable="false" class="mb-4 " src="{{ asset('img/logo.svg') }}" alt="" style="margin-left: 100px; margin-right:10px">
             <form action="" method="POST">
                 @csrf
                 <div>
@@ -99,10 +52,10 @@
                     <input type="password" name="password" id="password" class="form-control" required >
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button class="w-100 btn btn-lg btn-primary" style="background-color: #EF8732" type="submit" class="btn btn-primary">Login</button>
                 </div>
                 <div>
-                    <a href="register" class="text-center">Sign Up</a>
+                    <span>don't have an account?</span><a href="register" class="text-center">Sign Up</a>
                 </div>
             </form>
         </div>

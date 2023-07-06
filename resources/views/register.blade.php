@@ -83,11 +83,22 @@
     .main{
     height: 100vh;
     box-sizing: border-box;
+    background-image: url('{{ asset("img/bglogin.svg") }}');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .register-box{
+    box-shadow:0px 0px 40px 0px rgba(0, 0, 0, 0.30); 
     width: 500px;
-    border: solid 1px;
+    border: solid 0.5px;
     padding: 20px;
+    border-radius: 20px;
+    background-color: white;
 }
 form div{
     margin-bottom: 20px
@@ -112,6 +123,7 @@ form div{
         </div>
     @endif
     <div class="register-box">
+        <img draggable="false" class="mb-5" src="{{ asset('img/logo.svg') }}" alt="" style="margin-left: 100px">
         <form action="" method="post">
             @csrf
             <div>
@@ -131,7 +143,7 @@ form div{
                 <textarea name="addres" id="addres" class="form-control" required></textarea>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button class="w-100 btn btn-lg btn-primary" style="background-color: #EF8732" type="submit" class="btn btn-primary">Register</button>
             </div>
             <div>
                 Have Account?<a href="login" class="text-center">login</a>

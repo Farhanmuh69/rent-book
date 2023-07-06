@@ -10,7 +10,6 @@ body{
 .navbar{
     background-color: #F3DECD;
     position: fixed;
-    
 }
 .nav-color{
     color: black!important;
@@ -22,15 +21,24 @@ body{
 }
 .content{
     background-color:#F3DECD; 
-    display: flex;
-    height: 100vh;
+    height: 96vh;
 }
+
 .container-trending{
     display: 50vh;
-}
-.container-team{  
-    height: 50vh; 
 }
 .container{
     background-color: #F3DECD;
 }
+.container-bg{
+    /* background-image: url('{{ asset("img/beautiful-woman-reading-park 1.svg") }}'); */
+    background-color: #EF8732;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
