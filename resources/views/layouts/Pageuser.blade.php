@@ -18,7 +18,7 @@
             <nav class="navbar navbar-expand-lg" id="nav">
               <div class="container-fluid mt-4 ml-0">
                 <div draggable="false">
-                  <a href="/"><img draggable="false" src="./img/logo.svg"></a>
+                  <a href="/"><img draggable="false" src="{{ asset('img/logo.svg') }}"></a>
                 </div>
                 <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -47,6 +47,9 @@
     </div>
     </div>
 
+    @push('scripts')
+    <script src="{{ asset('path/to/your/script.js') }}"></script>
+@endpush
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/script.js"></script>

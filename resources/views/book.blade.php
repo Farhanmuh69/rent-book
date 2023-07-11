@@ -13,11 +13,11 @@
     </div>
 
     <div class="mt-5">
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
+    @if (session('message'))
+        <div class="alert {{ session('alert-class') }}">
+            {{ session('message') }}
+        </div>
+    @endif
     </div>
 
     <div class="my-5">

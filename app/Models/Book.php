@@ -15,7 +15,7 @@ class Book extends Model
     use Sluggable;
     use SoftDeletes;
 
-    protected $fillable = ['book_code','title','cover','slug'];
+    protected $fillable = ['book_code','title','cover','slug',''];
 
     public function sluggable(): array
     {

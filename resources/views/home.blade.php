@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('css/styless.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="icon" href="{{ asset('img/logos.png') }}">
+    @stack('scripts')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>BookBase | Home</title>
 </head>
@@ -17,7 +18,7 @@
             <nav class="navbar navbar-expand-lg" id="nav">
               <div class="container-fluid mt-4 ml-4">
                 <div draggable="false">
-                  <img draggable="false" src="./img/logo.svg" >
+                  <img draggable="false" src=" {{ asset('img/logo.svg') }}" >
                 </div>
                 <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -50,7 +51,7 @@
       <div class=" ">
         <div class="row flex-lg-row-reverse align-items-center g-2 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
-                <img  draggable="false" src="./img/imageBook.svg" class="bookssd-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                <img  draggable="false" src="{{ asset('img/imageBook.svg') }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="text-start col-lg-6 p-3 p-lg-5 pt-lg-3" style="margin-top:0px">
                 <h1 class="display-2 fw-bold lh-1 mb-3">Your place to rent books</h1>
@@ -72,7 +73,6 @@
   </div>
     <div class="slider">
               <div class="owl-carousel">
-              {{-- @foreach ($books as $item) --}}
               @foreach ($books as $item)
                @if($loop->index < 5)
                   <div class="slider-card">
@@ -98,31 +98,31 @@
           <div class="owl-carousel">
               <div class="slider-category">
                   <div class="d-flex justify-content-center align-items-center mb-4">
-                    <img draggable="false" class="category-item" src="./img/Group 3.svg" alt="">
+                    <img draggable="false" class="category-item" src="{{asset('img/Group 3.svg')}}" alt="">
                   </div>
               </div>
 
               <div class="slider-category">
                   <div class="d-flex justify-content-center align-items-center mb-4">
-                    <img draggable="false" class="category-item" src="./img/Group 5.svg" alt="">
+                    <img draggable="false" class="category-item" src="{{asset('img/Group 5.svg')}}" alt="">
                   </div>
               </div>
 
               <div class="slider-category">
                   <div class="d-flex justify-content-center align-items-center mb-4">
-                    <img draggable="false" class="category-item" src="./img/Group 3.svg" alt="">
+                    <img draggable="false" class="category-item" src="{{asset('img/Group 2.svg')}}" alt="">
                   </div>
               </div>
 
               <div class="slider-category">
                   <div class="d-flex justify-content-center align-items-center mb-4">
-                    <img draggable="false" class="category-item" src="./img/Group 6.svg" alt="">
+                    <img draggable="false" class="category-item" src="{{asset('img/Group 6.svg')}}" alt="">
                   </div>
               </div>
 
               <div class="slider-category">
                   <div class="d-flex justify-content-center align-items-center mb-4">
-                    <img draggable="false" class="category-item" src="./img/Group 1.svg" alt="">
+                    <img draggable="false" class="category-item" src="{{asset('img/Group 1.svg')}}" alt="">
                   </div>
               </div>
       </div>
@@ -145,7 +145,7 @@
                       <div class="col-md-10 text-center">
                         <div class="pt-1">
                           <h5 class="mt-4 font-weight-medium mb-0">Muhammad Farhan</h5>
-                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                          <h6 class="subtitle mb-3">Back End</h6>
                         </div>
                       </div>
                     </div>
@@ -158,7 +158,7 @@
                       <div class="col-md-10 text-center">
                         <div class="pt-1">
                           <h5 class="mt-4 font-weight-medium mb-0">Fitria Amanda</h5>
-                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                          <h6 class="subtitle mb-3">Front End</h6>
                         </div>
                       </div>
                     </div>
@@ -171,7 +171,7 @@
                       <div class="col-md-10 text-center">
                         <div class="pt-1">
                           <h5 class="mt-4 font-weight-medium mb-0">Daffa Rafsanjani</h5>
-                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                          <h6 class="subtitle mb-3">Front End</h6>
                         </div>
                       </div>
                     </div>
@@ -184,7 +184,7 @@
                       <div class="col-md-10 text-center">
                         <div class="pt-1">
                           <h5 class="mt-4 font-weight-medium mb-0">Fauzan Luthfi</h5>
-                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                          <h6 class="subtitle mb-3">Back End</h6>
                         </div>
                       </div>
                     </div>
@@ -197,7 +197,7 @@
                       <div class="col-md-10 text-center">
                         <div class="pt-1">
                           <h5 class="mt-4 font-weight-medium mb-0">Lina Rohmatun</h5>
-                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                          <h6 class="subtitle mb-3">Front End</h6>
                         </div>
                       </div>
                     </div>
@@ -210,7 +210,7 @@
                       <div class="col-md-10 text-center">
                         <div class="pt-1">
                           <h5 class="mt-4 font-weight-medium mb-0">Anugrah Mulki</h5>
-                          <h6 class="subtitle mb-3">Property Specialist</h6>
+                          <h6 class="subtitle mb-3">Front End</h6>
                         </div>
                       </div>
                     </div>
@@ -221,33 +221,25 @@
   </div>
 </div>
 
-<!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="my-0 mb-0 " >
-  <!-- Footer -->
   <footer
           class="text-center text-lg-start text-dark"
           style="background-color: #F3DECD"
           >
-    <!-- Grid container -->
     <div class="container p-4 pb-0">
-      <!-- Section: Links -->
       <section class="">
-        <!--Grid row-->
         <div class="row">
-          <!-- Grid column -->
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">
-              <img src="img/logo.svg" alt="">
+              <img src="{{ asset('img/logo.svg') }}" alt="">
             </h6>
             <p>
               Condong Catur, Depok, Sleman, Daerah Istimewa Yogyakarta 
             </p>
           </div>
-          <!-- Grid column -->
 
           <hr class="w-100 clearfix d-md-none" />
 
-          <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-bold mb-4 font-weight-bold">Contact Us</h6>
             <p>
@@ -257,46 +249,37 @@
               <a href="mailto:bookbase@gmail.com" class="text-dark" target="_blank">Email : bookbase@gmail.com</a>
             </p>
           </div>
-          <!-- Grid column -->
 
           <hr class="w-100 clearfix d-md-none" />
 
-          <!-- Grid column -->
           <hr class="w-100 clearfix d-md-none" />
 
-          <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class=" mb-4 font-weight-bold">Discover</h6>
             <a href="#nav"><p><i class="fas fa-home mr-3" ></i> Home</p></a>
             <p><i class="fas fa-envelope mr-3"></i> About Us</p>
             <p><i class="fas fa-phone mr-3"></i> Our Products</p>
           </div>
-          <!-- Grid column -->
 
-          <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Reviews</h6>
             <div>
-              <img src="img/Component 1.svg" alt="">
+              <img src="{{ asset('img/Component 1.svg') }}" alt="">
             </div>
             <div>
               <span>
-                <img src="img/instagram.png" alt="">
-                <img src="img/facebook.png" alt="">
-                 <img src="img/twitter.png" alt="">
+                <img src="{{ asset('img/instagram.png') }}" alt="">
+                <img src="{{ asset('img/facebook.png') }}" alt="">
+                 <img src="{{ asset('img/twitter.png') }}" alt="">
               </span>
             </div>
 
            
           </div>
         </div>
-        <!--Grid row-->
       </section>
-      <!-- Section: Links -->
     </div>
-    <!-- Grid container -->
 
-    <!-- Copyright -->
     <div
          class="text-center p-3"
          style="background-color: #F3DECD"
@@ -304,16 +287,18 @@
       © 2023 Copyright:BookBase
     
     </div>
-    <!-- Copyright -->
   </footer>
-  <!-- Footer -->
 </div>
-<!-- End of .container -->
 
 
 
 
+@push('scripts')
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/script.js') }}"></script>
 
+@endpush
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
