@@ -7,7 +7,6 @@
     .main{
         height: 100vh;
         box-sizing: border-box;
-        background-image: url('{{ asset("img/bglogin.svg") }}');
         background-size: cover;
         background-position: center;
         width: 100%;
@@ -32,12 +31,7 @@
 
 </style>
 <body>
-    <div class="main d-flex justify-content-center d-flex align-items-center color-dark" >
-        @if (Session('status'))
-            <div class="alert">
-                {{ Session('message') }}
-            </div>
-        @endif
+    <div class="main d-flex flex-column justify-content-center d-flex align-items-center color-dark" >
         {{-- <img class="align-self-center mr-3" src="{{ asset('img/logo.svg') }}" alt=""> --}}
         <div class="login-box" style="background-color: white">
         <img draggable="false" class="mb-4 " src="{{ asset('img/logo.svg') }}" alt="" style="margin-left: 100px; margin-right:10px">
@@ -57,6 +51,11 @@
                 <div>
                     <span>don't have an account?</span><a href="register" class="text-center">Sign Up</a>
                 </div>
+                @if (Session('status'))
+                    <div class="alert alert-danger text-center">
+                        {{ Session('message') }}
+                    </div>
+                @endif
             </form>
         </div>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {
@@ -38,7 +39,9 @@ class BookController extends Controller
         $request['cover'] = $newName;
         $book = Book::create($request ->all());
         $book->categories()->sync($request->categories);
-        return redirect('books')->with('status', 'Book Added Succesfully');
+        Session::flash('message','Book Added Succesfully');
+        Session::flash('alert-class','alert-success');
+        return redirect('books');
     }
     
     public function edit($slug)
@@ -64,10 +67,13 @@ class BookController extends Controller
         if($request->categories){
             $book->categories()->sync($request->categories);
         }
-        return redirect('books')->with('status', 'Book Updated Succesfully');
+        Session::flash('message','Book Updated Succesfully');
+        Session::flash('alert-class','alert-success');
+        return redirect('books');
     }
     public function delete($slug)
     {
+
         $book = Book::where('slug', $slug)->first();
         return view('book-delete', ['book'=>$book]);
     }
@@ -75,8 +81,15 @@ class BookController extends Controller
     public function destroy($slug)
     {
         $book = Book::where('slug',$slug)->first();
+        if ($book ['status'] != 'in stock') {
+            Session::flash('message','Cannot delete, Books are being borrowed');
+            Session::flash('alert-class','alert-danger');
+            return redirect('books');
+        }
         $book -> delete();
-        return redirect('books')->with('status','Book Delete Succesfuly');
+        Session::flash('message','Book Delete Succesfuly');
+        Session::flash('alert-class','alert-success');
+        return redirect('books');
     }
 
     public function deletedBook()
@@ -89,7 +102,9 @@ class BookController extends Controller
     {
         $book = Book::withTrashed()->where('slug', $slug)->first();
         $book -> restore();
-        return redirect('books')->with('status','Book Restore Succesfuly');
+        Session::flash('message','Book Restore Succesfuly');
+        Session::flash('alert-class','alert-success');
+        return redirect('books');
     }
 }
 

@@ -45,7 +45,6 @@ Route::middleware('auth')->group(function () {
         Route::get('profile',[profile::class,'profile'])->middleware('user');
         Route::get('bookList',[profile::class,'bookList'])->middleware('user');
         Route::get('profile',[UserController::class,'profile'])->middleware('user');
-
         Route::get('rent-logs',[RentLogController::class,'index']);
 
 

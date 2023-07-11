@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -51,9 +53,12 @@ class CategoryController extends Controller
     }
     public function destroy($slug)
     {
+       
         $category = Category::where('slug',$slug)->first();
         $category -> delete();
-        return redirect('categories')->with('status','Category Delete Succesfuly');
+        Session::flash('message','Category Delete Succesfuly');
+        Session::flash('alert-class','alert-success');
+        return redirect('categories');
     }
     public function deletedCategory()
     {
